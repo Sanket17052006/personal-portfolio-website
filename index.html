@@ -1,0 +1,440 @@
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sanket Srivastava's personal portfolio. Java & Python Developer showcasing projects, skills, and contact information.">
+    <meta name="keywords" content="Sanket Srivastava, Java Developer, Python, Portfolio, Projects, Programming, Student, Spring Boot">
+    <meta name="author" content="Sanket Srivastava">
+
+    <meta name="twitter:title" content="Sanket Srivastava | Java & Python Developer Portfolio">
+
+
+    <meta property="og:title" content="Sanket Srivastava">
+    <meta property="og:description"
+        content="Passionate Computer Science student specializing in Java, Spring Boot, and backend development. Explore my projects and skills.">
+
+
+    <title>Portfolio - Sanket Srivastava</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0e0f11;
+            color: #eaeaea;
+            overflow-x: hidden;
+        }
+
+
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.3;
+            filter: brightness(0.3) contrast(1.2);
+            pointer-events: none;
+        }
+
+        .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            animation: fade-in 2s ease-in;
+        }
+
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #4ea1d3;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            position: relative;
+            color: #eaeaea;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #4ea1d3;
+            bottom: -4px;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .nav-links a:hover {
+            color: #4ea1d3;
+        }
+
+        .div_content {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            animation: slide-up 1s ease-out;
+            text-align: center;
+        }
+        .container{
+            animation: fade-in 3s ease-in;
+        }
+
+
+        @keyframes slide-up {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+
+        .glow-hover:hover {
+            text-shadow: 0 0 8px #4ea1d3, 0 0 12px #4ea1d3, 0 0 16px #4ea1d3;
+            color: #ffffff;
+            transition: all 0.4s ease-in-out;
+            cursor: default;
+        }
+
+
+        #projects,
+        #skills,
+        #about,
+        #contact {
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 12px;
+            animation: slide-up 1s ease-out;
+        }
+
+
+        #projects article,
+        #skills .skill-category,
+        #about article,
+        #contact article {
+            transition: all 0.3s ease;
+        }
+
+        #projects article:hover,
+        #skills .skill-category:hover,
+        #about article:hover,
+        #contact article:hover {
+            box-shadow: 0 0 15px rgba(78, 161, 211, 0.5);
+            transform: translateY(-5px);
+            border-color: #6ec5ff;
+        }
+
+
+        #skills {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        #projects h1,
+        #skills h1,
+        #about h1,
+        #contact h1 {
+            text-align: center;
+            font-size: 2rem;
+            color: #4ea1d3;
+            margin-bottom: 2rem;
+        }
+
+        #projects ul,
+        #skills .skill-category ul {
+            list-style: none;
+            padding: 1.5rem;
+            border-radius: 8px;
+            background-color: #131518;
+        }
+
+        #projects ul li {
+            margin-bottom: 2rem;
+            color: #c4c4c4;
+        }
+        
+        #skills .skill-category ul li {
+             margin-bottom: 1rem;
+        }
+
+        #projects article h2,
+        #skills h3 {
+            font-size: 1.3rem;
+            color: #4ea1d3;
+            margin-bottom: 0.5rem;
+        }
+
+        #projects article p,
+        #skills ul li,
+        #about article,
+        #contact ul li {
+            font-size: 1rem;
+            color: #a9adb4;
+        }
+
+        #projects article a,
+        #contact a,
+        #contact ul li a {
+            color: #4ea1d3;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        #about article {
+            background-color: #131518;
+            padding: 1.5rem;
+            border: 1px solid #2a2d31;
+            border-radius: 8px;
+            line-height: 1.7;
+        }
+
+        .button {
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 2px solid transparent;
+            border-image: linear-gradient(90deg, #4ea1d3, #83eaf1);
+            border-image-slice: 1;
+            color: #4ea1d3;
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background: rgba(78, 161, 211, 0.15);
+            transform: scale(1.05);
+        }
+
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #4ea1d3;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #a9adb4;
+        }
+
+        .description {
+            color: #a9adb4;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        footer {
+            background-color: #0e0f11;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            color: #888;
+            font-size: 1rem;
+            border-top: 1px solid #2a2d31;
+        }
+    </style>
+
+
+</head>
+
+<body>
+   
+    <video autoplay muted loop id="bg-video">
+        <source src="https://www.dl.dropboxusercontent.com/scl/fi/flbq7mba56nh6elh2h85i/bg.mp4?rlkey=loo0toe2bx0r84labpqb22cu6&st=8n600vq1" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+
+        <nav>
+            <div class="logo">Sanket Srivastava</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+
+        <section class="div_content">
+            <h1 class="glow-hover">Hi, I'm Sanket Srivastava</h1>
+            <div class="subtitle">
+                <p>Backend Developer | Java & Spring Boot | Building Scalable Solutions</p>
+            </div>
+            <p class="description">
+                A passionate and proactive first-year Computer Science student exploring the realms of technology and innovation.
+                Currently focusing on building robust backend systems and learning cutting-edge technologies.
+            </p>
+            <a href="#projects" class="button">View My Work</a>
+        </section>
+
+        <section id="projects">
+            <h1 class="glow-hover">Projects</h1>
+            <ul>
+                <li>
+                    <article>
+                        <h2>Journal App (Backend API)</h2>
+                        <p>A full-stack personal journal application with a RESTful API backend. Currently being built with Java and the Spring Boot framework, with plans to integrate a NoSQL database (MongoDB) for data persistence. This project demonstrates modern backend development practices.</p>
+                        <p><a href="https://github.com/Sanket17052006/Journal-App.git"target="_blank">View on GitHub</a></p>
+                        <hr>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h2>Hotel Management CLI</h2>
+                        <p>A complete, console-based application to manage hotel customer bookings using Python. Implemented all core CRUD (Create, Read, Update, Delete) operations and utilized Python's CSV module for local data storage and persistence.</p>
+                        <p><a href="https://github.com/Sanket17052006/hotel-management-CLI" target="_blank">View on GitHub</a></p>
+                        <hr>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h2>Java Tic-Tac-Toe (GUI)</h2>
+                        <p>A classic Tic-Tac-Toe game with a graphical user interface (GUI) built using Java Swing. This project demonstrates object-oriented programming principles and event-driven programming for desktop applications.</p>
+                        <p style="color: #4f6180;"><em>Not yet pushed.</em></p>
+                        <hr>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <section id="skills">
+            <h1 class="glow-hover">Skills</h1>
+            <div class="skill-category">
+                <h3>Languages</h3>
+                <ul>
+                    <li><img src="https://www.dl.dropboxusercontent.com/scl/fi/h6huh3e7mdc1kib819397/java.png?rlkey=uj152o1d7qb3rl93a5ycjacm8&st=0he8visa" alt="Java" width="20"> Java</li>
+                    <li><img src="https://www.dl.dropboxusercontent.com/scl/fi/qp1fy3s75bbp15x2mjmey/python.png?rlkey=gv0s18boulawrdjc4pg2xlx83&st=iq2t8zsx" alt="Python" width="20"> Python</li>
+                    <li><img src="https://www.dl.dropboxusercontent.com/scl/fi/ee1qd62r35iqhdyqrxepv/c.png?rlkey=lbnsqonbeicp06cu80exqh183&st=4r0n961o" alt="C" width="20"> C (Basic)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Backend & Databases</h3>
+                <ul>
+                    <li><img src="https://www.dl.dropboxusercontent.com/scl/fi/e5lrqtooe2e7m95263dki/springboot.png?rlkey=vmtls9fhtfpju5kge1t7ipl78&st=wwmmkeri&dl=0" alt="Spring Boot" width="20"> Spring Boot</li>
+                    <li><img src="https://www.dl.dropboxusercontent.com/scl/fi/og1t1bjyz0g50x84ilhgj/mongodb.png?rlkey=3imgapb0wm1b2i6q2g7wvhran&st=41udbqbf&dl=0" alt="MongoDB" width="20"> MongoDB</li>
+                     <li><img src="https://www.dl.dropboxusercontent.com/scl/fi/tu8b8yfdy1x263h1jqd0o/mysql.png?rlkey=4pty5pzfksb1qasb3brjrm1b3&st=7r62agb4&dl=0" alt="SQL" width="20"> SQL (Basic)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Fundamentals & Tools</h3>
+                <ul>
+                    <li><img src="https://www.dl.dropboxusercontent.com/scl/fi/k3mlqga5eyphla8lpnhxc/dsa.png?rlkey=ldp3oylxlp9xy4m5artisxm8v&st=505a21s3&dl=0" alt="DSA" width="20"> Data Structures & Algorithms</li>
+                    <li><img src="https://www.dl.dropboxusercontent.com/scl/fi/vn9409lc3ppek0mp1nocg/oops.png?rlkey=jq98hyztvfv5qzcc25sk52ywz&st=k8063jzb" alt="OOP" width="20"> Object-Oriented Programming (OOP)</li>
+                    <li><img src="https://www.dl.dropboxusercontent.com/scl/fi/xvvge0tssy2j5j5w3crp1/git.png?rlkey=mbuuonoyu4j1h05i113n2is29&st=7yhf9tnb" alt="Git" width="20"> Git & GitHub</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="about">
+            <h1 class="glow-hover">About Me</h1>
+            <article>
+                <p>
+                    I'm Sanket Srivastava, a B.Tech Computer Science student (2024–2028) with a deep passion for
+                    technology, programming, and building real-world applications. I enjoy exploring core computer
+                    science concepts and continuously learning through hands-on projects.
+                </p>
+                <p>
+                    My primary interest is in backend development, where I focus on creating efficient, scalable, and user-friendly
+                    software. I am proficient in Java and Spring Boot, and comfortable with Python for scripting and tool development.
+                </p>
+                <p>
+                    Currently, I’m focused on expanding my skill set, contributing to open-source, and building a
+                    solid foundation in data structures, algorithms, and system design.
+                </p>
+            </article>
+        </section>
+
+        <section id="contact">
+            <h1 class="glow-hover">Contact</h1>
+            <article>
+                <ul>
+                    <li><img src="https://www.dl.dropboxusercontent.com/scl/fi/631fnqyv0komlwf0jfffm/email.png?rlkey=l9p3hunhuezimt8d40xzc64jh&st=01kvhq05" alt="Email" width="20">
+                        <a href="mailto:sanket17052006@gmail.com" target="_blank">sanket17052006@gmail.com</a>
+                    </li>
+                    <br>
+                    <li><img src="https://www.dl.dropboxusercontent.com/scl/fi/cto5imcuj5mweknmotbzr/linkedin.png?rlkey=62g080p7e36gmu2wz665ntqrr&st=dyijxc4c" alt="LinkedIn" width="20">
+                        <a href="https://www.linkedin.com/in/sanket-srivastava-4ba530328" target="_blank">Sanket Srivastava</a>
+                    </li>
+                    <br>
+                    <li><img src="https://www.dl.dropboxusercontent.com/scl/fi/yhma59aw4p0pqe3vdqt4g/phone.png?rlkey=bdr54xsske8ighbji4o7o0a5r&st=bp7qlvf4" alt="Phone" width="20"> +91-9693363454</li>
+                </ul>
+            </article>
+        </section>
+
+        <footer>
+            <p>
+                &copy; 2025 Sanket Srivastava. All rights reserved.
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
